@@ -2,10 +2,11 @@
 
 . abi_settings.sh $1 $2 $3
 
-pushd expat-2.1.0
+pushd libexpat/expat
 
 make clean
 
+./buildconf.sh
 ./configure \
   --with-pic \
   --with-sysroot="$NDK_SYSROOT" \

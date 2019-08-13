@@ -2,7 +2,7 @@
 
 . abi_settings.sh $1 $2 $3
 
-pushd fribidi-0.19.7
+pushd fribidi
 
 make clean
 
@@ -14,6 +14,7 @@ autoreconf -ivf
   --host="$NDK_TOOLCHAIN_ABI" \
   --enable-static \
   --disable-shared \
+  --disable-docs \
   --with-glib=no \
   --prefix="${TOOLCHAIN_PREFIX}" || exit 1
 

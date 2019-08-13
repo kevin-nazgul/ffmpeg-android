@@ -14,7 +14,7 @@ make clean
   --host="$NDK_TOOLCHAIN_ABI" \
   --enable-static \
   --disable-shared \
-  --with-png=yes \
+  --with-png=no \
   --with-zlib=yes \
   --prefix="${TOOLCHAIN_PREFIX}" || exit 1
 
