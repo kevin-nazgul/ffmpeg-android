@@ -31,7 +31,6 @@ make clean
 --enable-fontconfig \
 --enable-pthreads \
 --disable-debug \
---disable-ffserver \
 --enable-version3 \
 --enable-hardcoded-tables \
 --disable-ffplay \
@@ -41,11 +40,12 @@ make clean
 --disable-doc \
 --disable-shared \
 --enable-static \
+--disable-linux-perf \
 --pkg-config="${2}/ffmpeg-pkg-config" \
 --prefix="${2}/build/${1}" \
 --extra-cflags="-I${TOOLCHAIN_PREFIX}/include $CFLAGS" \
 --extra-ldflags="-L${TOOLCHAIN_PREFIX}/lib $LDFLAGS" \
---extra-libs="-lpng -lexpat -lm" \
+--extra-libs="-lpng -lexpat -lm -lz" \
 --extra-cxxflags="$CXX_FLAGS" || exit 1
 
 make -j${NUMBER_OF_CORES} && make install || exit 1
